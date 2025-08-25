@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Turismo Medellín</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 20px; }
+    .tabs { display: flex; border-bottom: 2px solid #ccc; flex-wrap: wrap; }
+    .tab { padding: 10px 20px; cursor: pointer; border: 1px solid #ccc; border-bottom: none; background: #f1f1f1; margin-right: 5px; }
+    .tab.active { background: white; font-weight: bold; }
+    .content { border: 1px solid #ccc; padding: 20px; display: none; }
+    .content.active { display: block; }
+    a { color: blue; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+  <h2>Turismo en Medellín y el Valle de Aburrá</h2>
+  <div class="tabs">
+    <div class="tab active" onclick="showTab(0)">Zona Sur</div>
+    <div class="tab" onclick="showTab(1)">Zona Norte</div>
+    <div class="tab" onclick="showTab(2)">Zona Centro</div>
+    <div class="tab" onclick="showTab(3)">Zona Oriente</div>
+    <div class="tab" onclick="showTab(4)">Zona Occidente</div>
+  </div>
+
+  <div class="content active">
+    <h3>Zona Sur</h3>
+    <p><a href="zona-sur.html" target="_blank">Ver información de la Zona Sur</a></p>
+  </div>
+  <div class="content">
+    <h3>Zona Norte</h3>
+    <p><a href="zona-norte.html" target="_blank">Ver información de la Zona Norte</a></p>
+  </div>
+  <div class="content">
+    <h3>Zona Centro</h3>
+    <p><a href="zona-centro.html" target="_blank">Ver información de la Zona Centro</a></p>
+  </div>
+  <div class="content">
+    <h3>Zona Oriente</h3>
+    <p><a href="zona-oriente.html" target="_blank">Ver información de la Zona Oriente</a></p>
+  </div>
+  <div class="content">
+    <h3>Zona Occidente</h3>
+    <p><a href="zona-occidente.html" target="_blank">Ver información de la Zona Occidente</a></p>
+  </div>
+
+  <script>
+    function showTab(index) {
+      let tabs = document.querySelectorAll('.tab');
+      let contents = document.querySelectorAll('.content');
+      tabs.forEach((t,i) => {
+        t.classList.toggle('active', i === index);
+        contents[i].classList.toggle('active', i === index);
+      });
+    }
+  </script>
+</body>
+</html>
+
